@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ecebe4">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <meta name="description" content="Selected FPGA, embedded firmware, RF, analog, and power electronics work by Rivera Wijaya.">
+  <title>Rivera Wijaya — Electrical Engineering</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="home">
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="site-brand" href="index.html" aria-label="Rivera Wijaya — Home">
+        <span class="site-brand__icon" aria-hidden="true">
+          <span data-profile="headerMark">RW</span>
+        </span>
+        <span class="site-brand__name" data-profile="headerName">Rivera Wijaya</span>
+      </a>
+
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="primary-navigation"
+        aria-label="Open navigation menu"
+      >
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="primary-navigation" id="primary-navigation" aria-label="Primary navigation">
+        <a class="navigation-link" href="index.html" data-nav-page="home">Home</a>
+
+        <div class="navigation-dropdown">
+          <button
+            class="navigation-link dropdown-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="projects-menu"
+          >
+            <span>Projects</span>
+            <svg viewBox="0 0 12 8" aria-hidden="true">
+              <path d="M1 1.5 6 6.5l5-5"></path>
+            </svg>
+          </button>
+
+          <div class="dropdown-menu" id="projects-menu">
+            <a href="digital.html" data-nav-page="digital">
+              <span class="dropdown-number">01</span>
+              <span>
+                <strong>Digital Hardware</strong>
+                <small>FPGA, RTL and architecture</small>
+              </span>
+            </a>
+
+            <a href="firmware.html" data-nav-page="firmware">
+              <span class="dropdown-number">02</span>
+              <span>
+                <strong>Embedded Firmware</strong>
+                <small>C, protocols and bring-up</small>
+              </span>
+            </a>
+
+            <a href="analog.html" data-nav-page="analog">
+              <span class="dropdown-number">03</span>
+              <span>
+                <strong>Analog + RF</strong>
+                <small>Power, PCB and RF design</small>
+              </span>
+            </a>
+          </div>
+        </div>
+
+        <a class="navigation-link" href="index.html#about">About</a>
+        <a class="navigation-link" href="index.html#contact">Contact</a>
+        <a class="navigation-resume" data-link="resume" href="assets/Rivera-Wijaya-Resume.pdf">
+          Résumé <span aria-hidden="true">↗</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow" data-profile="eyebrow">Electrical Engineering · University of Toronto</p>
+          <h1 class="portfolio-title" aria-label="Rivera Wijaya's Workshop">
+            <span class="portfolio-owner">Rivera Wijaya's</span>
+            <span
+              class="portfolio-subject"
+            >Workshop</span>
+          </h1>
+          <p class="hero-copy" data-profile="intro">FPGA/RTL, embedded firmware, RF, and power electronics—designed with verification, measurement, and real hardware bring-up in mind.</p>
+          <div class="hero-actions">
+            <a class="btn primary" href="#work">View projects <span aria-hidden="true">↓</span></a>
+            <a class="btn" data-link="email" href="mailto:your.email@example.com">Email ↗</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section" id="work">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow">Areas</p>
+            <h2>Project index</h2>
+          </div>
+          <p>Work across digital hardware, embedded firmware, and analog/RF design. Each section includes implementation details, measurements, and the tools used.</p>
+        </div>
+        <div class="path-grid" data-render="paths"></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow">Selected work</p>
+            <h2>Selected projects</h2>
+          </div>
+          <p>Projects are presented around the engineering decisions that matter: architecture, interfaces, verification, measurements, and what happened during bring-up.</p>
+        </div>
+        <div class="featured-grid" data-render="featured"></div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container">
+        <div class="about-panel reveal">
+          <div class="about-aside">
+            <p class="eyebrow">About</p>
+            <div class="big">I work across RTL, firmware, and mixed-signal hardware.</div>
+            <div class="about-meta mono"><span data-profile="location">Toronto, Canada</span><br><span data-profile="availability">Open to FPGA / RTL / embedded opportunities</span></div>
+          </div>
+          <div class="about-content">
+            <p>I am an Electrical Engineering student at the University of Toronto focused on FPGA/RTL design, embedded systems, computer architecture, and the analog hardware that supports them. My projects span streaming datapaths, protocol bridges, DSP, RF power amplification, and power regulation.</p>
+            <p>I care about more than making a block compile. I want to know how it is verified, whether timing closes, how the interface fails, what the oscilloscope says, and whether another engineer can understand the design quickly.</p>
+            <div class="skill-cloud">
+              <span class="chip">SystemVerilog</span><span class="chip">C / C++</span><span class="chip">Python</span><span class="chip">FPGA</span><span class="chip">cocotb</span><span class="chip">SVA</span><span class="chip">Vivado</span><span class="chip">Quartus</span><span class="chip">LTspice</span><span class="chip">KiCad</span><span class="chip">UART / I²C / SPI</span><span class="chip">Oscilloscope + FFT</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="contact-panel reveal">
+          <p class="eyebrow">Contact</p>
+          <h2>Get in touch.</h2>
+          <p>I’m available to discuss FPGA, RTL, embedded firmware, hardware acceleration, and mixed hardware/software work.</p>
+          <div class="hero-actions" style="justify-content:center">
+            <a class="btn primary" data-link="email" href="mailto:your.email@example.com">Email me ↗</a>
+            <a class="btn" data-link="github" href="#" target="_blank" rel="noreferrer">GitHub ↗</a>
+            <a class="btn" data-link="linkedin" href="#" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-row">
+      <span>© <span data-current-year></span> <span data-profile="name">Rivera Wijaya</span></span>
+      <span class="mono">ELECTRICAL ENGINEERING / TORONTO</span>
+      <div class="socials"><a data-link="github" href="#">GitHub</a><a data-link="linkedin" href="#">LinkedIn</a></div>
+    </div>
+  </footer>
+
+  <script src="site-data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

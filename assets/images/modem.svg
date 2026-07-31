@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" role="img" aria-labelledby="t d">
+<title id="t">4-FSK Audio Modem</title><desc id="d">Four frequency bands, waveform, and packet symbols.</desc>
+<defs><linearGradient id="bg" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#0f2937"/><stop offset="1" stop-color="#071018"/></linearGradient><linearGradient id="g" x1="0" x2="1"><stop stop-color="#61d8e7"/><stop offset="1" stop-color="#ffca74"/></linearGradient></defs>
+<rect width="1200" height="700" fill="url(#bg)"/><g opacity=".12" stroke="#dff7ff"><path d="M0 100H1200M0 200H1200M0 300H1200M0 400H1200M0 500H1200M0 600H1200"/><path d="M100 0V700M200 0V700M300 0V700M400 0V700M500 0V700M600 0V700M700 0V700M800 0V700M900 0V700M1000 0V700M1100 0V700"/></g>
+<text x="70" y="84" fill="#9db0bb" font-family="monospace" font-size="24">RX SPECTRUM / 4-FSK</text>
+<g transform="translate(80 135)"><rect x="0" y="260" width="180" height="180" rx="18" fill="#61d8e7" opacity=".22"/><rect x="240" y="200" width="180" height="240" rx="18" fill="#61d8e7" opacity=".34"/><rect x="480" y="105" width="180" height="335" rx="18" fill="#ffca74" opacity=".55"/><rect x="720" y="25" width="180" height="415" rx="18" fill="#ff8f79" opacity=".72"/>
+<g fill="#eef5f8" font-family="monospace" font-size="26"><text x="55" y="490">100</text><text x="292" y="490">500</text><text x="526" y="490">1000</text><text x="766" y="490">1500</text></g></g>
+<path d="M70 570 C125 470 180 650 235 550 S345 475 400 565 S510 635 565 545 S675 455 730 550 S840 650 895 535 S1005 460 1130 565" fill="none" stroke="url(#g)" stroke-width="8" stroke-linecap="round"/>
+<g transform="translate(75 620)" font-family="monospace" font-size="23"><rect width="1050" height="46" rx="12" fill="#0d1d28" stroke="#294451"/><text x="24" y="31" fill="#61d8e7">01</text><text x="94" y="31" fill="#ffca74">11</text><text x="164" y="31" fill="#ff8f79">10</text><text x="234" y="31" fill="#61d8e7">00</text><text x="330" y="31" fill="#9db0bb">PREAMBLE  /  LENGTH  /  PAYLOAD  /  PARITY</text></g>
+</svg>

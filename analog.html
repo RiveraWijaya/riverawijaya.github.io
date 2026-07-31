@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ecebe4">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <meta name="description" content="Engineering project portfolio by Rivera Wijaya.">
+  <title>Analog + RF Projects — Rivera Wijaya</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="analog">
+  <div class="progress" aria-hidden="true"></div>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="site-brand" href="index.html" aria-label="Rivera Wijaya — Home">
+        <span class="site-brand__icon" aria-hidden="true">
+          <span data-profile="headerMark">RW</span>
+        </span>
+        <span class="site-brand__name" data-profile="headerName">Rivera Wijaya</span>
+      </a>
+
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="primary-navigation"
+        aria-label="Open navigation menu"
+      >
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="primary-navigation" id="primary-navigation" aria-label="Primary navigation">
+        <a class="navigation-link" href="index.html" data-nav-page="home">Home</a>
+
+        <div class="navigation-dropdown">
+          <button
+            class="navigation-link dropdown-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="projects-menu"
+          >
+            <span>Projects</span>
+            <svg viewBox="0 0 12 8" aria-hidden="true">
+              <path d="M1 1.5 6 6.5l5-5"></path>
+            </svg>
+          </button>
+
+          <div class="dropdown-menu" id="projects-menu">
+            <a href="digital.html" data-nav-page="digital">
+              <span class="dropdown-number">01</span>
+              <span>
+                <strong>Digital Hardware</strong>
+                <small>FPGA, RTL and architecture</small>
+              </span>
+            </a>
+
+            <a href="firmware.html" data-nav-page="firmware">
+              <span class="dropdown-number">02</span>
+              <span>
+                <strong>Embedded Firmware</strong>
+                <small>C, protocols and bring-up</small>
+              </span>
+            </a>
+
+            <a href="analog.html" data-nav-page="analog">
+              <span class="dropdown-number">03</span>
+              <span>
+                <strong>Analog + RF</strong>
+                <small>Power, PCB and RF design</small>
+              </span>
+            </a>
+          </div>
+        </div>
+
+        <a class="navigation-link" href="index.html#about">About</a>
+        <a class="navigation-link" href="index.html#contact">Contact</a>
+        <a class="navigation-resume" data-link="resume" href="assets/Rivera-Wijaya-Resume.pdf">
+          Résumé <span aria-hidden="true">↗</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="category-hero">
+      <div class="container">
+        <a class="category-back" href="index.html#work">← Back to all disciplines</a>
+        <div class="category-hero-grid">
+          <div>
+            <p class="eyebrow"><span data-category="number">01</span> / 03 · <span data-category="kicker">RTL · FPGA</span></p>
+            <h1><span data-category="shortLabel">Digital</span><span>.</span></h1>
+          </div>
+          <div>
+            <p class="category-intro" data-category="description">Focused engineering project collection.</p>
+            <div class="category-skills" data-render="category-skills"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-stack">
+      <div class="container" data-render="projects"></div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="contact-panel reveal">
+          <p class="eyebrow">More work</p>
+          <h2>Browse another project area.</h2>
+          <p>See the full index or get in touch about FPGA, firmware, analog, RF, or power-electronics work.</p>
+          <div class="hero-actions" style="justify-content:center">
+            <a class="btn primary" href="index.html#work">All project areas ↗</a>
+            <a class="btn" data-link="email" href="mailto:your.email@example.com">Email me ↗</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-row">
+      <span>© <span data-current-year></span> <span data-profile="name">Rivera Wijaya</span></span>
+      <span class="mono"><span data-category="label">Engineering</span> / PROJECT LOG</span>
+      <div class="socials"><a data-link="github" href="#">GitHub</a><a data-link="linkedin" href="#">LinkedIn</a></div>
+    </div>
+  </footer>
+
+  <script src="site-data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
