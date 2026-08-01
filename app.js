@@ -150,18 +150,11 @@
         return `
           <a
             class="feature-card reveal"
+            data-category="${escapeHtml(project.category)}"
             href="${escapeHtml(category.page)}#${escapeHtml(
               project.id
             )}"
           >
-            <div class="feature-image">
-              <img
-                src="${escapeHtml(project.image)}"
-                alt="${escapeHtml(project.imageAlt)}"
-                loading="lazy"
-              >
-            </div>
-
             <div class="feature-body">
               <div class="feature-meta">
                 <span>
@@ -250,11 +243,7 @@
     `;
   }
 
-  function renderProjectVisual(
-    project,
-    index,
-    count
-  ) {
+  function renderProjectVisual(project) {
     const imagePanel = `
       <div
         class="visual-panel active"
@@ -274,12 +263,6 @@
       return `
         <div class="project-visual">
           ${imagePanel}
-
-          <span class="project-index">
-            ${String(index + 1).padStart(2, "0")}
-            /
-            ${String(count).padStart(2, "0")}
-          </span>
         </div>
       `;
     }
@@ -365,12 +348,6 @@
             }
           </div>
         </div>
-
-        <span class="project-index">
-          ${String(index + 1).padStart(2, "0")}
-          /
-          ${String(count).padStart(2, "0")}
-        </span>
       </div>
     `;
   }
@@ -491,16 +468,20 @@
             class="project-showcase reveal"
             id="${escapeHtml(project.id)}"
           >
-            ${renderProjectVisual(
-              project,
-              index,
-              projects.length
-            )}
+            ${renderProjectVisual(project)}
 
             <div class="project-content">
-              <span class="subtitle">
-                ${escapeHtml(project.subtitle)}
-              </span>
+              <div class="project-heading-meta">
+                <span class="subtitle">
+                  ${escapeHtml(project.subtitle)}
+                </span>
+
+                <span class="project-count">
+                  ${String(index + 1).padStart(2, "0")}
+                  /
+                  ${String(projects.length).padStart(2, "0")}
+                </span>
+              </div>
 
               <h2>
                 ${escapeHtml(project.title)}

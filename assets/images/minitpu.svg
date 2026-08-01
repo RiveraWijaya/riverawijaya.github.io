@@ -1,6 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" role="img" aria-labelledby="t d"><title id="t">MiniTPU systolic array</title><desc id="d">Four by four processing element grid with diagonal wavefront.</desc>
 <defs><linearGradient id="bg" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#101e2b"/><stop offset="1" stop-color="#071018"/></linearGradient><filter id="glow"><feGaussianBlur stdDeviation="8" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs><rect width="1200" height="700" fill="url(#bg)"/><g opacity=".12" stroke="#dff7ff"><path d="M0 100H1200M0 200H1200M0 300H1200M0 400H1200M0 500H1200M0 600H1200"/><path d="M100 0V700M200 0V700M300 0V700M400 0V700M500 0V700M600 0V700M700 0V700M800 0V700M900 0V700M1000 0V700M1100 0V700"/></g>
-<text x="70" y="82" fill="#9db0bb" font-family="monospace" font-size="24">MATRIX ENGINE / WAVEFRONT ACTIVE</text>
 <g transform="translate(300 95)">
 <g stroke="#284450" stroke-width="5"><path d="M-180 100H600M-180 220H600M-180 340H600M-180 460H600"/><path d="M100-60V600M220-60V600M340-60V600M460-60V600"/></g>
 <g font-family="monospace" font-size="26" text-anchor="middle">
