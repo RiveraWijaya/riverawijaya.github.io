@@ -20,6 +20,7 @@ analog.html
 assets/
   favicon.svg
   images/
+    projects/
 ```
 
 ## Preview locally
@@ -61,23 +62,26 @@ Each project supports:
 - `metrics`
 - `links.github`
 - `links.demo`
-- `image`
 - `imageAlt`
 
 Set `featured: true` to show a project on the homepage.
 
-## Replace project images
+## Add project images
 
-Put your images in `assets/images/`, then change the project's `image` value in `site-data.js`.
+Put an image in `assets/images/projects/` and name it after the project's `id` in `site-data.js`. No code changes are needed.
 
-Recommended format: 1600 × 900 JPG, PNG, WebP, or SVG.
+For example, the project with `id: "uart-i2c"` will automatically use the first matching file below:
 
-Example:
-
-```js
-image: "assets/images/arty-a7-scope.jpg",
-imageAlt: "Arty A7 connected to an oscilloscope during UART-to-I2C testing",
+```text
+assets/images/projects/uart-i2c.jpg
+assets/images/projects/uart-i2c.jpeg
+assets/images/projects/uart-i2c.png
+assets/images/projects/uart-i2c.webp
+assets/images/projects/uart-i2c.avif
+assets/images/projects/uart-i2c.svg
 ```
+
+Use lowercase file extensions. A 1600 × 900 image is recommended. If no matching file exists, the project is shown without an image area. `imageAlt` is optional and can still be added to a project for custom accessibility text.
 
 ## Publish with GitHub Pages
 

@@ -157,12 +157,6 @@ window.PORTFOLIO_DATA = {
       subtitle:
         "DE1-SoC / Nios V",
 
-      image:
-        "assets/images/modem.svg",
-
-      imageAlt:
-        "Stylized audio spectrum and digital waveform visualization",
-
       summary:
         "A complete real-time modem that transmits and receives frequency-mapped digital symbols through the DE1-SoC audio path.",
 
@@ -225,12 +219,6 @@ window.PORTFOLIO_DATA = {
       subtitle:
         "4×4 MAC Array",
 
-      image:
-        "assets/images/minitpu.svg",
-
-      imageAlt:
-        "Stylized 4 by 4 systolic processing element array",
-
       summary:
         "A streaming matrix-multiply engine built around a registered 4×4 systolic array and diagonal wavefront scheduling.",
 
@@ -291,12 +279,6 @@ window.PORTFOLIO_DATA = {
 
       subtitle:
         "DE1-SoC FPGA",
-
-      image:
-        "assets/images/sensor-vga.svg",
-
-      imageAlt:
-        "Stylized FPGA sensor input connected to VGA pixels and audio",
 
       summary:
         "An FPGA system that converts live GPIO sensor events into visual and audio feedback with deterministic RTL control.",
@@ -360,12 +342,6 @@ window.PORTFOLIO_DATA = {
       subtitle:
         "Arty A7",
 
-      image:
-        "assets/images/uart-i2c.svg",
-
-      imageAlt:
-        "UART packets translated into I2C transactions inside an FPGA",
-
       summary:
         "A hardware bridge that receives framed UART commands and translates them into I²C bus transactions for peripheral control.",
 
@@ -428,12 +404,6 @@ window.PORTFOLIO_DATA = {
       subtitle:
         "University of Toronto Aerospace Team",
 
-      image:
-        "assets/images/adcs.svg",
-
-      imageAlt:
-        "Satellite attitude-control firmware command flow",
-
       summary:
         "C firmware for command parsing, validation, checksums, and low-level communication within a student satellite ADCS subsystem.",
 
@@ -495,12 +465,6 @@ window.PORTFOLIO_DATA = {
 
       subtitle:
         "Complete PA Signal Chain",
-
-      image:
-        "assets/images/rf-pa.svg",
-
-      imageAlt:
-        "Stylized Class-E power amplifier waveform and matching network",
 
       summary:
         "A measured 14 MHz RF power amplifier chain covering logic conditioning, gate drive, switching PA, matching, and harmonic filtering.",
@@ -578,12 +542,6 @@ window.PORTFOLIO_DATA = {
 
       subtitle:
         "Rover Power Regulation",
-
-      image:
-        "assets/images/buck-boost.svg",
-
-      imageAlt:
-        "Stylized four-switch buck-boost power converter",
 
       summary:
         "A four-switch non-inverting synchronous buck-boost regulator designed for stable 24 V rover power across a varying battery input.",

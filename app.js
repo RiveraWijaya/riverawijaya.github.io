@@ -8,6 +8,18 @@
   const MODEL_VIEWER_CDN =
     "https://ajax.googleapis.com/ajax/libs/model-viewer/4.3.1/model-viewer.min.js";
 
+  const PROJECT_IMAGE_DIRECTORY =
+    "assets/images/projects";
+
+  const PROJECT_IMAGE_EXTENSIONS = [
+    "jpg",
+    "jpeg",
+    "png",
+    "webp",
+    "avif",
+    "svg",
+  ];
+
   function safeLink(url) {
     return Boolean(url && String(url).trim() && url !== "#");
   }
@@ -244,24 +256,46 @@
   }
 
   function renderProjectVisual(project) {
+    const conventionalImageBase =
+      `${PROJECT_IMAGE_DIRECTORY}/${project.id}`;
+
+    const imageSources = [
+      ...(safeLink(project.image)
+        ? [project.image]
+        : []),
+      ...PROJECT_IMAGE_EXTENSIONS.map(
+        (extension) =>
+          `${conventionalImageBase}.${extension}`
+      ),
+    ];
+
+    const hasViewer = validViewer(project);
+
     const imagePanel = `
       <div
-        class="visual-panel active"
+        class="visual-panel${hasViewer ? "" : " active"}"
         id="${escapeHtml(project.id)}-image-panel"
         data-visual-panel="image"
+        data-project-image-panel
         role="tabpanel"
+        ${hasViewer ? "hidden" : ""}
       >
         <img
-          src="${escapeHtml(project.image)}"
-          alt="${escapeHtml(project.imageAlt)}"
-          loading="lazy"
+          alt="${escapeHtml(
+            project.imageAlt || `${project.title} project image`
+          )}"
+          data-project-image
+          data-image-sources="${escapeHtml(
+            JSON.stringify(imageSources)
+          )}"
+          hidden
         >
       </div>
     `;
 
-    if (!validViewer(project)) {
+    if (!hasViewer) {
       return `
-        <div class="project-visual">
+        <div class="project-visual" data-project-visual hidden>
           ${imagePanel}
         </div>
       `;
@@ -287,27 +321,27 @@
           )} media"
         >
           <button
-            class="visual-tab active"
-            type="button"
-            role="tab"
-            aria-selected="true"
-            aria-controls="${escapeHtml(
-              project.id
-            )}-image-panel"
-            data-visual-target="image"
-          >
-            Project image
-          </button>
-
-          <button
             class="visual-tab"
             type="button"
             role="tab"
             aria-selected="false"
             aria-controls="${escapeHtml(
               project.id
+            )}-image-panel"
+            data-visual-target="image"
+            hidden
+          >
+            Project image
+          </button>
+
+          <button
+            class="visual-tab active"
+            type="button"
+            role="tab"
+            aria-selected="true"
+            aria-controls="${escapeHtml(
+              project.id
             )}-3d-panel"
-            tabindex="-1"
             data-visual-target="3d"
           >
             3D board
@@ -317,11 +351,10 @@
         ${imagePanel}
 
         <div
-          class="visual-panel viewer-panel"
+          class="visual-panel viewer-panel active"
           id="${escapeHtml(project.id)}-3d-panel"
           data-visual-panel="3d"
           role="tabpanel"
-          hidden
         >
           ${viewerMarkup}
 
@@ -625,6 +658,68 @@
     );
   }
 
+  function bindProjectImages() {
+    document
+      .querySelectorAll("[data-project-image]")
+      .forEach((image) => {
+        let sources = [];
+
+        try {
+          sources = JSON.parse(
+            image.dataset.imageSources || "[]"
+          );
+        } catch {
+          sources = [];
+        }
+
+        const panel = image.closest(
+          "[data-project-image-panel]"
+        );
+
+        const visual = image.closest(
+          ".project-visual"
+        );
+
+        const imageTab = visual?.querySelector(
+          '[data-visual-target="image"]'
+        );
+
+        let sourceIndex = 0;
+
+        const removeMissingImage = () => {
+          if (visual?.classList.contains("has-viewer")) {
+            imageTab?.remove();
+            panel?.remove();
+          } else {
+            visual?.remove();
+          }
+        };
+
+        const tryNextSource = () => {
+          if (sourceIndex >= sources.length) {
+            removeMissingImage();
+            return;
+          }
+
+          image.src = sources[sourceIndex];
+          sourceIndex += 1;
+        };
+
+        image.addEventListener("load", () => {
+          image.hidden = false;
+
+          if (visual?.classList.contains("has-viewer")) {
+            imageTab.hidden = false;
+          } else {
+            visual.hidden = false;
+          }
+        });
+
+        image.addEventListener("error", tryNextSource);
+        tryNextSource();
+      });
+  }
+
   function setActiveVisual(
     switcher,
     target
@@ -685,7 +780,7 @@
           ),
         ];
 
-        tabs.forEach((tab, index) => {
+        tabs.forEach((tab) => {
           tab.addEventListener(
             "click",
             () => {
@@ -715,13 +810,22 @@
                   ? 1
                   : -1;
 
+              const visibleTabs =
+                tabs.filter(
+                  (candidate) =>
+                    !candidate.hidden
+                );
+
+              const index =
+                visibleTabs.indexOf(tab);
+
               const nextTab =
-                tabs[
+                visibleTabs[
                   (
                     index +
                     direction +
-                    tabs.length
-                  ) % tabs.length
+                    visibleTabs.length
+                  ) % visibleTabs.length
                 ];
 
               setActiveVisual(
@@ -1197,6 +1301,7 @@
   renderPaths();
   renderFeatured();
   renderCategory();
+  bindProjectImages();
   bindDetails();
   bindVisualSwitchers();
   bindNavigation();
