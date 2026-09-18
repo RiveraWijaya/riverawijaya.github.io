@@ -25,13 +25,12 @@ window.PORTFOLIO_DATA = {
       "Open to FPGA / RTL / embedded opportunities",
 
     email:
-      "your.email@example.com",
+      "rivera.wijaya@mail.utoronto.ca",
 
     github:
-      "https://github.com/your-username",
-
+      "https://github.com/RiveraWijaya",
     linkedin:
-      "https://www.linkedin.com/in/your-profile",
+      "https://www.linkedin.com/in/rivera-wijaya",
 
     resumeUrl: "",
   },
