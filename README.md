@@ -45,11 +45,13 @@ Update the `profile` object near the top:
 - `resumeUrl`
 - headline, introduction, availability, and location
 
-To enable the resume button, add the PDF to the repository and set:
+To enable the resume links and homepage section, put your PDF at:
 
-```js
-resumeUrl: "Rivera_Wijaya_Resume.pdf"
+```text
+assets/resume/resume.pdf
 ```
+
+The site is already configured to use that location, so no code changes are needed.
 
 Each project supports:
 

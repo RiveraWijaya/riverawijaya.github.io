@@ -93,17 +93,15 @@
         element.href = profile.linkedin;
       });
 
-    const resume = document.querySelector(
-      "[data-link='resume']"
-    );
-
-    if (resume) {
-      if (safeLink(profile.resumeUrl)) {
-        resume.href = profile.resumeUrl;
-      } else {
-        resume.remove();
-      }
-    }
+    document
+      .querySelectorAll("[data-link='resume']")
+      .forEach((resume) => {
+        if (safeLink(profile.resumeUrl)) {
+          resume.href = profile.resumeUrl;
+        } else {
+          resume.remove();
+        }
+      });
   }
 
   function renderPaths() {

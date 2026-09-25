@@ -7,7 +7,6 @@ Examples:
 - `fsk-modem.jpg`
 - `minitpu.png`
 - `uart-i2c.webp`
-- `adcs-firmware.jpg`
 - `class-e-pa.png`
 - `buck-boost.webp`
 

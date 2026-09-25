@@ -32,7 +32,7 @@ window.PORTFOLIO_DATA = {
     linkedin:
       "https://www.linkedin.com/in/rivera-wijaya",
 
-    resumeUrl: "",
+    resumeUrl: "assets/resume/resume.pdf",
   },
 
   categories: {
@@ -378,68 +378,6 @@ window.PORTFOLIO_DATA = {
         {
           label: "Platform",
           value: "Arty A7",
-        },
-      ],
-
-      links: {
-        github: "",
-        demo: "",
-      },
-    },
-
-    {
-      id:
-        "adcs-firmware",
-
-      category:
-        "firmware",
-
-      featured:
-        true,
-
-      title:
-        "ADCS Command + Communication Firmware",
-
-      subtitle:
-        "University of Toronto Aerospace Team",
-
-      summary:
-        "C firmware for command parsing, validation, checksums, and low-level communication within a student satellite ADCS subsystem.",
-
-      description:
-        "This work focuses on dependable command handling at the subsystem boundary. The implementation validates message structure, checks expected receive sizes, generates and verifies checksums, and supports bring-up by tracing failures across protocol framing and hardware communication behavior.",
-
-      tags: [
-        "C",
-        "Firmware",
-        "Checksums",
-        "Command parser",
-        "Bring-up",
-        "ADCS",
-      ],
-
-      highlights: [
-        "Implemented command parsing and checksum generation/verification in C.",
-
-        "Debugged protocol framing, expected receive sizes, and record ordering.",
-
-        "Supported subsystem bring-up by isolating hardware/software communication faults.",
-      ],
-
-      metrics: [
-        {
-          label: "Domain",
-          value: "Space systems",
-        },
-
-        {
-          label: "Language",
-          value: "C",
-        },
-
-        {
-          label: "Focus",
-          value: "Reliable comms",
         },
       ],
 

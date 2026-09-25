@@ -1118,6 +1118,34 @@ body::before {
   text-align: left;
 }
 
+.resume-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
+  gap: clamp(32px, 7vw, 96px);
+  align-items: end;
+  padding: clamp(36px, 6vw, 68px);
+  border: 1px solid var(--text);
+  background: var(--panel);
+}
+
+.resume-panel .eyebrow {
+  margin-bottom: 18px;
+}
+
+.resume-panel h2 {
+  max-width: 760px;
+  margin: 0;
+  font-size: clamp(2.5rem, 5.5vw, 5rem);
+  font-weight: 600;
+  line-height: 0.98;
+  letter-spacing: -0.05em;
+}
+
+.resume-copy p {
+  margin: 0 0 26px;
+  color: var(--muted);
+}
+
 .contact-panel .eyebrow,
 .contact-panel h2 {
   color: var(--bg);
@@ -1315,6 +1343,10 @@ body::before {
     grid-template-columns: 1fr;
   }
 
+  .resume-panel {
+    grid-template-columns: 1fr;
+  }
+
   .path-card + .path-card {
     border-left: 1px solid var(--line);
     border-top-color: var(--card-accent);
@@ -1359,6 +1391,10 @@ body::before {
 
   .section {
     padding: 64px 0;
+  }
+
+  .resume-panel {
+    padding: 34px 24px;
   }
 
   .portfolio-subject {
